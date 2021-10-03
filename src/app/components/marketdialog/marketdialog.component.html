@@ -1,0 +1,26 @@
+<div class="card-header bg-transparent">
+    <div class="row align-items-center">
+      <div class="col">
+        <h6 class="text-uppercase ls-1 mb-1" style="font-size: 15px">{{data.mode}}</h6>
+        <a href="https://www.5paisa.com/" target="__blank"><h2 class="text-dark mb-0">Market</h2></a>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Chart -->
+    <div class="chart" style="height: auto;">
+        <h2>Company: {{data.company.name}}</h2>
+        <h4> <span *ngIf="data.mode === 'Sell'"> Ask</span> <span *ngIf="data.mode === 'Buy'"> Bid</span>  Price: {{data.company.current_market_price}}</h4> 
+
+        <div class="form-group">
+            <label class="form-control-label" for="input-username">Number of shares</label>
+            <input *ngIf="data.mode === 'Sell'" type="number" min="1" max="{{data.cmp.quantity}}" id="input-username" name="acc" [(ngModel)]='number' class="form-control form-control-alternative" placeholder="number of shares">
+            <input *ngIf="data.mode === 'Buy'" type="number" min="1" id="input-username" name="acc" [(ngModel)]='number' class="form-control form-control-alternative" placeholder="number of shares">
+        </div>
+        <a (click)="buy()" class="btn btn-info">{{data.mode}}</a>
+        <br><br>    
+        <small>** your shares will be <span *ngIf="data.mode === 'Buy'"> bought</span> <span *ngIf="data.mode === 'Sell'"> sold</span>  at market price at the moment you click on <span *ngIf="data.mode === 'Buy'"> buy</span> <span *ngIf="data.mode === 'Sell'"> sell</span></small>
+    </div>
+  </div>

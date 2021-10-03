@@ -1,0 +1,99 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 450px; background-image: url(assets/img/icons/common/nasdaq.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <!-- <span class="mask" style="background: linear-gradient(to right,#673400, #834200, #964b00, #a4550a, #b6551d); opacity: 0.6;"></span> -->
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-8 col-md-10">
+        <!-- <img  src="assets/img/icons/common/5paisa.png"> -->
+        <!-- <h1 class="display-2 text-white">5paisa</h1> -->
+        <!-- <p class="text-white mt-0 mb-5">ssss</p> -->
+        <!-- <a (click)="update_profile()" class="btn btn-info">Edit profile</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col-xl-7">
+        <div class="card shadow">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-uppercase  ls-1 mb-1">Guidelines</h6>
+                <h2 class="mb-0">How to get extra Virtual Cash?</h2>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart" style="height: auto;">
+                <!-- Chart wrapper -->
+                <h4>Follow the following steps for bonus points</h4>
+                <ul>
+                  <li>Click on the Open Demat Account tab with Upstox and open your Demat account</li>
+                  <li>After successfully completing Demat account process, Put your USER ID of Demat account in the tab below and click on the claim button.</li>
+                  <li>If you already have Upstox Demat account then directly put your Demat account User ID in the below tab and claim.</li>
+                  <li>Additional 5,50,000 Virtual Money will automatically added to your account within 24hours.</li>
+              </ul> 
+            </div>
+            <form (onSubmit)="update_profile()">
+              <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
+              <div class="" style="margin-top: 0px;">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-username">Upstox Demat Account ID</label>
+                      <input type="text" id="input-username" name="acc" [(ngModel)]='demat' class="form-control form-control-alternative" placeholder="Demat account ID">
+                    </div>
+                  </div>
+                  <div class="col-lg-4" >
+                    <br> <br>
+                    <!-- <label class="form-control-label" for="input-username"></label> -->
+                    <a style="margin-top: -15px;" (click)="update_profile()" class="btn btn-primary text-white">Submit for Review</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5">
+        <div class="card shadow">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-uppercase ls-1 mb-1">Overview</h6>
+                <a href="https://upstox.com/open-demat-account/" target="__blank"><h2 class="text-dark mb-0">Upstox</h2></a>
+              </div>
+              <div class="col">
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Chart -->
+            <div class="chart" style="height: auto;">
+                <h2># START KARKE DEKHO</h2><br>
+                <a  href="https://upstox.com/open-demat-account/" target="__blank" class="btn btn-primary">Open Demat Account with Upstox</a>
+                <br><br>
+                <h4>₹1000 brokerage credit valid for 30 days</h4>
+                <h4>₹0 brokerage* on Mutual Funds and IPOs</h4>
+                <h4>Up to ₹20/order on Equity, F&O, Commodity and Currency</h4>
+                <!-- <ul>
+                  <li>Up to ₹20/order on Equity, F&O, Commodity and Currency</li>
+                  <li>₹0 brokerage* on Mutual Funds and IPOs</li>
+                  <li>Integrated Platform for Stocks, Mutual Fund, Insurance & Advisory</li>
+                  <li>Lightning Fast Trading and Advanced Mobile Application</li>
+              </ul> -->
+              <!-- <h4>Empower yourself with <strong>5paisa Youngvestor Demat Account</strong> and be eligible for below benifits:</h4>
+                <ul>
+                  <li>Zero Account Opening Fee</li>
+                  <li>Zero Brokerage for Delivery & Intraday Trade</li>
+                  <li>Zero Commission on Mutual Fund Investment</li>
+                  <li>ZERO AMC</li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

@@ -1,0 +1,108 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/icons/common/stonk.jpg); background-size: cover; background-position: center top;">
+  <!-- <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8"> -->
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+      </div>
+    </div>
+  </div>
+  <!-- Page content -->
+  <div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Leaderboard</h3>
+            <h5>Open Track</h5>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Net Worth</th>
+                  <th scope="col">Username</th>
+                  <!-- <th scope="col">City</th> -->
+                  <!-- <th scope="col"></th> -->
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let leader of leaders | slice:0:10; let i=index">
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <!-- <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                        <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
+                      </a> -->
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{leader.fname}} {{leader.lname}}</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td>
+                    {{ leader.cash | currency:'INR'}}
+                  </td>
+                  <td>
+                    {{leader.username}}
+                  </td>
+                  <!-- <td>
+                    {{leader.city}}
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer py-4">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <h3 class="mb-0">Leaderboard</h3>
+            <h5>IITB Track</h5>
+          </div>
+          <div class="table-responsive">
+            <table class="table align-items-center table-flush">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Net Worth</th>
+                  <th scope="col">Username</th>
+                  <!-- <th scope="col"></th>
+                  <th scope="col"></th> -->
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let leader of iitb">
+                  <th scope="row">
+                    <div class="media align-items-center">
+                      <!-- <a href="javascript:void(0)" class="avatar rounded-circle mr-3">
+                        <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
+                      </a> -->
+                      <div class="media-body">
+                        <span class="mb-0 text-sm">{{leader.fname}} {{leader.lname}}</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td>
+                    {{ leader.cash | currency:'INR'}}
+                  </td>
+                  <td>
+                    {{leader.username}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer py-4">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

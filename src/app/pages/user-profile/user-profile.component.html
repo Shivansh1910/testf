@@ -1,0 +1,175 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 300px; background-image: url(assets/img/icons/common/stonk.jpg); background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <!-- <span class="mask opacity-8" style="background: linear-gradient(to right,#673400, #834200, #964b00, #a4550a, #b6551d);"></span> -->
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Hello {{fname}} {{lname}}</h1>
+        <!-- <p class="text-white mt-0 mb-5">ssss</p> -->
+        <!-- <a (click)="update_profile()" class="btn btn-info">Edit profile</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a href="javascript:void(0)">
+                <!-- <img src="https://www.ecell.in/ca/dash/assets/img/person_holder.jpg" class="rounded-circle"> -->
+                <img src="{{image_src}}" class="rounded-circle" style="width: 180px; height: 180px;">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+          <div class="d-flex justify-content-between">
+            <!-- <a href="javascript:void(0)" class="btn btn-sm btn-info mr-4">Connect</a>
+            <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Message</a> -->
+          </div>
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <div class="row">
+            <div class="col">
+              <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                <div>
+                  <span class="heading">{{count}}</span>
+                  <span class="description">Holdings</span>
+                </div>
+                <div>
+                  <span class="heading">{{cash | currency : 'INR'}}</span>
+                  <span class="description">Cash</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <h3>
+              {{fname}} {{lname}}
+            </h3>
+            <div class="h5 font-weight-300" *ngIf="city!='null'">
+              <i class="ni location_pin mr-2"></i>{{city}}<span *ngIf="zip!='null'" class="font-weight-light">, {{zip}}</span>
+            </div>
+            <!-- <div class="h5 mt-4">
+              <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+            </div> -->
+            <!-- <div>
+              <i class="ni education_hat mr-2"></i>University of Computer Science
+            </div> -->
+            <!-- <hr class="my-2" />
+            <p>To earn a bonus of <strong> {{ 100000 | currency: 'INR'}}</strong></p>
+            <a href="bonus" class="btn btn-info">Click here</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">My account</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form (onSubmit)="update_profile()">
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Username</label>
+                    <input type="text" id="input-username" name="username" [(ngModel)]='username' class="form-control form-control-alternative" placeholder="Username" disabled="" >
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input type="email" id="input-email" name="email" [(ngModel)]='email' class="form-control form-control-alternative" placeholder="user@example.com" disabled="">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">First name</label>
+                    <input type="text" id="input-first-name" name="fname" [(ngModel)]='fname' class="form-control form-control-alternative" placeholder="First name" disabled="">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Last name</label>
+                    <input type="text" id="input-last-name" name="lname" [(ngModel)]='lname' class="form-control form-control-alternative" placeholder="Last name" disabled="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <hr class="my-4" />
+            <h6 class="heading-small text-muted mb-4">Demographic information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">City</label>
+                    <input type="text" id="input-country" [(ngModel)]="city" name="city" class="form-control form-control-alternative" placeholder="City Name" >
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">Mobile Number</label>
+                    <input type="number" id="input-postal-code" [(ngModel)]="zip"  name="zip" class="form-control form-control-alternative" placeholder="Mobile Number">
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <hr class="my-4" />
+            <!-- Address -->
+            <h6 class="heading-small text-muted mb-4">IIT Bombay track information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12 my-3">
+                  <div class="custom-control custom-control-alternative custom-checkbox">
+                    <input class="custom-control-input" [(ngModel)]="is_iitb" name="iitb" id=" customCheckLogin" type="checkbox">
+                    <label class="custom-control-label" for=" customCheckLogin">
+                      <span class="text-muted">Are You an IIT Bombay Student</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="is_iitb" class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-city">Roll Number</label>
+                    <input type="text" id="input-city" [(ngModel)]="roll_number" name="ron" class="form-control form-control-alternative" placeholder="Roll number" >
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">Program / Department</label>
+                    <input type="text" id="input-country" [(ngModel)]="program" name="pro" class="form-control form-control-alternative" placeholder="BTech. / Mechanical Engineering" >
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-country">Hostel</label>
+                    <input type="number" id="input-postal-code" [(ngModel)]="hostel" name="hoes" class="form-control form-control-alternative" placeholder="Hostel Number">
+                  </div>
+                </div>
+              </div>
+              <div class="row py-5 text-center">
+                <div class="col-lg-12">
+                  <a (click)="update_profile()" class="btn btn-info"><p style="margin: 0em; padding: 0; color: white;">Save Changes</p></a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

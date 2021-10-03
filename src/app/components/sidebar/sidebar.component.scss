@@ -1,0 +1,12 @@
+.logo-inverse {
+    display: none !important;
+}
+
+@media only screen and (max-width: 480px) {
+    .logo {
+      display: none !important;
+    }
+    .logo-inverse {
+        display: block !important;
+    }
+}
